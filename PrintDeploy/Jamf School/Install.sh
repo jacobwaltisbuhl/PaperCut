@@ -10,8 +10,8 @@ function installdmg {
     fi
 
     DMG_URL=$1
-    while true; do ping -c1 print.ccc.qld.edu.au > /dev/null && break; done
-    echo "Host Resolved: print.ccc.qld.edu.au"
+    while true; do ping -c1 print.papercutserver.local > /dev/null && break; done
+    echo "Host Resolved: print.papercutserver.local"
 
     tempd=$(mktemp -d)
     trap "rm -rf $tempd" EXIT
@@ -35,4 +35,4 @@ function installdmg {
     fi
 }
 
-installdmg "http://print.ccc.qld.edu.au:9191/print-deploy/client/macos"
+installdmg "http://print.papercutserver.local:9191/print-deploy/client/macos"
